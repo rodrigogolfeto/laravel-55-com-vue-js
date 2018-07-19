@@ -377,33 +377,6 @@ module.exports = {
 /* 1 */
 /***/ (function(module, exports) {
 
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
 /* globals __VUE_SSR_CONTEXT__ */
 
 // IMPORTANT: Do NOT use ES2015 features in this file.
@@ -507,6 +480,33 @@ module.exports = function normalizeComponent (
     options: options
   }
 }
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
 
 
 /***/ }),
@@ -1382,7 +1382,7 @@ function applyToTag (styleElement, obj) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(13);
-module.exports = __webpack_require__(58);
+module.exports = __webpack_require__(61);
 
 
 /***/ }),
@@ -1410,7 +1410,7 @@ Vue.component('topo', __webpack_require__(41));
 Vue.component('painel', __webpack_require__(44));
 Vue.component('caixa', __webpack_require__(50));
 Vue.component('pagina', __webpack_require__(55));
-Vue.component('tabela-lista', __webpack_require__(68));
+Vue.component('tabela-lista', __webpack_require__(58));
 
 var app = new Vue({
   el: '#app'
@@ -18587,7 +18587,7 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(16)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(16)(module)))
 
 /***/ }),
 /* 16 */
@@ -43225,7 +43225,7 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(39).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(39).setImmediate))
 
 /***/ }),
 /* 39 */
@@ -43295,7 +43295,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
 /* 40 */
@@ -43488,14 +43488,14 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(5)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(5)))
 
 /***/ }),
 /* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(42)
 /* template */
@@ -43668,7 +43668,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(45)
 }
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(48)
 /* template */
@@ -43842,7 +43842,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(51)
 }
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(53)
 /* template */
@@ -43996,7 +43996,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(56)
 /* template */
@@ -44100,29 +44100,14 @@ if (false) {
 
 /***/ }),
 /* 58 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(69)
+var __vue_script__ = __webpack_require__(59)
 /* template */
-var __vue_template__ = __webpack_require__(70)
+var __vue_template__ = __webpack_require__(60)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -44161,7 +44146,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 69 */
+/* 59 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44190,53 +44175,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['titulos']
+    props: ['titulos', 'itens']
 });
 
 /***/ }),
-/* 70 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -44261,7 +44206,22 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _vm._m(0)
+      _c(
+        "tbody",
+        _vm._l(_vm.itens, function(item) {
+          return _c(
+            "tr",
+            [
+              _vm._l(item, function(i) {
+                return _c("td", [_vm._v(_vm._s(i))])
+              }),
+              _vm._v(" "),
+              _vm._m(0, true)
+            ],
+            2
+          )
+        })
+      )
     ])
   ])
 }
@@ -44270,78 +44230,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("tbody", [
-      _c("tr", [
-        _c("td", [_vm._v("1")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Título..")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Descrição..")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Autor..")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Data..")]),
-        _vm._v(" "),
-        _c("td", [
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Editar")]),
-          _vm._v(" | \n              "),
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Deletar")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("tr", [
-        _c("td", [_vm._v("1")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Título..")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Descrição..")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Autor..")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Data..")]),
-        _vm._v(" "),
-        _c("td", [
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Editar")]),
-          _vm._v(" | \n              "),
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Deletar")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("tr", [
-        _c("td", [_vm._v("1")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Título..")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Descrição..")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Autor..")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Data..")]),
-        _vm._v(" "),
-        _c("td", [
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Editar")]),
-          _vm._v(" | \n              "),
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Deletar")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("tr", [
-        _c("td", [_vm._v("1")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Título..")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Descrição..")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Autor..")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Data..")]),
-        _vm._v(" "),
-        _c("td", [
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Editar")]),
-          _vm._v(" | \n              "),
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Deletar")])
-        ])
-      ])
+    return _c("td", [
+      _c("a", { attrs: { href: "#" } }, [_vm._v("Editar")]),
+      _vm._v(" | \n              "),
+      _c("a", { attrs: { href: "#" } }, [_vm._v("Deletar")])
     ])
   }
 ]
@@ -44353,6 +44245,12 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-0bcf54f7", module.exports)
   }
 }
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
